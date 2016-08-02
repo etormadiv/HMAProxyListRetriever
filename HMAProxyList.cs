@@ -1,5 +1,5 @@
 /**
- *   Retrive Hide My Ass(TM) Privax(R) Proxy List and bypass Anti-Bot Techniques.
+ *   Retrieve Hide My Ass(TM) Privax(R) Proxy List and bypass Anti-Bot Techniques.
  *   Copyright (C) 2016  Etor Madiv
  *
  *   This program is free software: you can redistribute it and/or modify
@@ -319,15 +319,14 @@ namespace HMAProxyListClient
 			
 			Regex regex = new Regex("<" + tagName + "[^>]*>(.*?)</" + tagName + ">");
 
-            if (regex.IsMatch(rawHtmlLine))
-            {
-                MatchCollection collection = regex.Matches(rawHtmlLine);
-                
-				foreach (Match m in collection)
-                {
-                    return m.Groups[1].Value;
-                }
-            }
+		        if (regex.IsMatch(rawHtmlLine))
+		        {
+		         	MatchCollection collection = regex.Matches(rawHtmlLine);
+		        	foreach (Match m in collection)
+		                {
+		                    return m.Groups[1].Value;
+		                }
+		        }
 			
 			return "";
 		}
